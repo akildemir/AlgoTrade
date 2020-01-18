@@ -7,8 +7,8 @@ from binance.client import Client
 from util import writeToFile
 
 #init
-api_key = "crdv8sGzNgQiaMXa91Ybbfvj9qaUba8OnIZN65ZrtjFDrYHP5UtrMYraiAAisWJW"
-api_secret = "xRn9iGwfkjNq2Zpn6OKlkWg8TPi0lp65ysJpHqwEK8SVOaIfCGssrMlsvxAxNXUq"
+api_key = ""  #your binance API KEY here
+api_secret = ""  #your binace SECRET KEY here
 binancecClient = Client(api_key, api_secret)
 balance = 500
 models = {}
@@ -79,5 +79,5 @@ if __name__ == "__main__":
     main = threading.Event()
     balance = refreshTradeSession(balance)
    
-    while not main.wait(60*60*50): # run every 50 hours
+    while not main.wait(60*60*24*3): # run every 3 days
         balance = refreshTradeSession(balance)
